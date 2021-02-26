@@ -84,12 +84,26 @@ const MealsFavTabNavigator =
 
 const FiltersNavigator = createStackNavigator({
   Filters: FiltersScreen
+}, {
+  defaultNavigationOptions: defaultStackNavOptions,
 }); // using stackNavigator here to only get header above
 // otherwise FiltersScreen can be directly used in the MainNavigator
 
 const MainNavigator = createDrawerNavigator({
-  MealsFavs: MealsFavTabNavigator,
+  MealsFavs: {
+    screen: MealsFavTabNavigator,
+    navigationOptions: {
+      drawerLabel: 'Meals'
+    }
+  },
   Filters: FiltersNavigator
+}, {
+  contentOptions: {
+    activeTintColor: Colors.accentColor,
+    labelStyle: {
+      fontFamily: 'open-sans-bold'
+    }
+  }
 });
 
 export default createAppContainer(MainNavigator);
