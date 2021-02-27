@@ -26,6 +26,9 @@ const defaultStackNavOptions = {
   },
   headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primaryColor,
   // headerTitle: 'Screen'
+  cardStyle: {
+    backgroundColor: 'white'
+  }
 };
 
 const MealsNavigator = createStackNavigator({
